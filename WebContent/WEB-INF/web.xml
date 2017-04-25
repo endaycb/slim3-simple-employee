@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>Siaga Bali</display-name>
+
+	<context-param>
+		<param-name>slim3.rootPackage</param-name>
+		<param-value>com.endaycb.slim3.test</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.localizationContext
+		</param-name>
+		<param-value>application</param-value>
+	</context-param>
+	<context-param>
+		<param-name>javax.servlet.jsp.jstl.fmt.request.charset</param-name>
+		<param-value>UTF-8</param-value>
+	</context-param>
+
+	<filter>
+		<filter-name>FrontController</filter-name>
+		<filter-class>org.slim3.controller.FrontController</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>FrontController</filter-name>
+		<url-pattern>*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+
+	<!-- <filter>
+		<filter-name>LoginRequiredFilter</filter-name>
+		<filter-class>com.ebconnect.apps.siaga.server.LoginRequiredFilter
+		</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginRequiredFilter</filter-name>
+		<url-pattern>/admin/*</url-pattern>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+	</filter-mapping> --> 
+
+	<security-constraint>
+		<web-resource-collection>
+			<url-pattern>*.jsp</url-pattern>
+		</web-resource-collection>
+		<auth-constraint />
+	</security-constraint>
+
+	<display-name>SIAGA BALI</display-name>
+	<welcome-file-list>
+		<welcome-file>index</welcome-file>
+	</welcome-file-list>
+
+
+</web-app>

@@ -1,0 +1,4 @@
+#ignore javacompiled
+*.class
+WebContent/WEB-INF/classes/*.class
+
